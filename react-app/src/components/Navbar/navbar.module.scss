@@ -1,0 +1,43 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 12vw;
+  height: 10vh;
+
+
+  .linkWrap{
+    display: flex;
+    width: 15vw;
+    justify-content: space-evenly;
+    margin-top: 3vh;
+
+    a{
+      font-size: 2rem;
+      text-decoration: none;
+      color: black;
+      padding: 0 1rem;
+    }
+    .active{
+      color: #5ECE7B;
+      border-bottom: #5ECE7B solid 2px;
+      height: 55px;
+    }
+  }
+
+  .logoWrap{
+    img{
+      max-height: 40px;
+      margin-top: 3vh;
+    }
+  }
+
+  .rightSide{
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    height: 30%;
+    margin-top: 3vh;
+  }
+
+}
+

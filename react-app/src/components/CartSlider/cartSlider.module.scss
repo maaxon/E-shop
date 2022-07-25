@@ -1,0 +1,30 @@
+.wrapper{
+  height: 85%;
+  width: 10vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  img{
+    max-height: 100%;
+    max-width: 10vw;
+  }
+  span{
+    position: relative;
+    top:-10%;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    left: 70%;
+    img{
+      width: 16%;
+    }
+  }
+}
+
+.singleSlide{
+  max-height: 50%;
+  max-width: 10vw;
+}
+
+.sm{
+  max-height: 50%;
+  max-width:85%
+}

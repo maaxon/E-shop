@@ -1,0 +1,28 @@
+.wrapper{
+  margin-left: 10vw;
+  width: 80vw;
+
+  p,h1,h2{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .title {
+    border-bottom: #E5E5E5 1px solid;
+    padding:5vh 0;
+  }
+  .order{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 5vh;
+    span{
+      font-family: 'Raleway', sans-serif;
+      width: 15%;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #5ECE7B;
+      color: white;
+    }
+  }
+}

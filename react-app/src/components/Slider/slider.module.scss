@@ -1,0 +1,38 @@
+.wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 70%;
+  grid-column-gap: 5%;
+  height: 50%;
+
+  .controlPanel{
+    overflow-y: auto;
+    height: 80%;
+    scrollbar-width:thin;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+
+      img{
+        width: 70%;
+        margin-bottom:10% ;
+      }
+      .selected{
+        opacity: 0.6;
+      }
+  }
+  .imgWrap{
+        height: 80vh;
+    img{
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.singleImg{
+  width: 80%;
+  max-height:80vh ;
+  margin-left: 5%;
+}

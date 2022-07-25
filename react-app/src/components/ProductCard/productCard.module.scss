@@ -1,0 +1,53 @@
+.card{
+    width: 30%;
+    height: 350px;
+    margin-left: 3%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    background-color: #ffffff;
+    img{
+        width: 80%;
+        height: 70%;
+    }
+    .price, .title{
+        font-family: 'Raleway', sans-serif;
+        width: 85%;
+    }
+
+    .title{
+        font-weight: 300;
+    }
+
+}
+
+.outStock{
+    position: relative;
+    color: #8D8F9A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    top: -30vh;
+    z-index: 200;
+    height: 10vh;
+}
+
+.cartCircle{
+    display: none;
+}
+
+.card:hover{
+    filter: drop-shadow(0px 4px 35px #A8ACB030);
+    opacity: 0.7;
+}
+
+.card:hover .cartCircle{
+    position: absolute;
+    display: block;
+    z-index: 500;
+    width: 15%;
+    height: 15%;
+    top: 60%;
+    left: 75%;
+}

@@ -1,0 +1,25 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 45vw 40vw;
+  grid-column-gap: 5vw;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  p,h1,h2{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .AddButton{
+    margin-bottom: 2vh;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #5ECE7B;
+    border: none;
+    }
+  }

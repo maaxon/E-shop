@@ -1,0 +1,26 @@
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 0;
+  border-bottom: #E5E5E5 solid 1px ;
+  .rightSide{
+    display: flex;
+    .counter{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 85%;
+      align-items: center;
+      margin-right: 5%;
+      span{
+        border: 1px black solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+}

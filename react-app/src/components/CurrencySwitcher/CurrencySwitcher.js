@@ -2,17 +2,36 @@ import React, {Component} from "react";
 import currencyState from "../../state/Currencies/Currencies";
 import {observer} from "mobx-react";
 import classes from './currencySwitcher.module.scss'
+import currencySwitcherArrow from '../../images/currencySwitcherArrow.png'
 
 class CurrencySwitcher extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.wrapperRef = React.createRef();
+        this.handleClickOutside = this.handleClickOutside.bind(this)
         this.state = {active:false}
     }
 
+
     componentDidMount= async ()=> {
         await currencyState.getCurrencies()
+        document.addEventListener("mousedown", this.handleClickOutside);
     }
+
+    componentWillUnmount() {
+        document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target) && this.state.active) {
+            this.setState({active:false})
+        }
+    }
+
+
+
 
     onSelect=(symbol)=>{
         currencyState.setCurrency(symbol)
@@ -26,14 +45,15 @@ class CurrencySwitcher extends Component{
 
     render() {
         return <>
-            <div onClick={this.onClick} className={classes.currencySwitcher}>
+
+            <div  onClick={this.onClick} className={classes.currencySwitcher}>
                 <span>{currencyState.currency}</span>
-                <span className={classes.arrow}>&#129083;</span>
+                <img className={classes.arrow} src={currencySwitcherArrow} alt={"currencySwitcherArrow"}/>
             </div>
 
-            <div className={`${classes.overlay} ${!this.state.active && classes.disabled}`}>
+            <div ref={this.wrapperRef} className={`${classes.overlay} ${!this.state.active && classes.disabled}`}>
                 {currencyState.currencies.map((currency)=>
-                    <p onClick={()=>{this.onSelect(currency.symbol)}}>{currency.symbol}{currency.label}</p>
+                    <p key={currency.label} onClick={()=>{this.onSelect(currency.symbol)}}>{currency.symbol}{currency.label}</p>
                 )}
             </div>
 

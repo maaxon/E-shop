@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Router,Route,Redirect} from "wouter";
+import {Router,Route} from "wouter";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Navbar from "./components/Navbar/Navbar";
 import ProductPage from "./pages/ProductPage/ProductPage";
@@ -14,7 +14,6 @@ export default class AppRouter extends Component{
             <>
                     <Navbar />
                     <Router>
-                        <Route path={"/"}><Redirect to={'/category/all'}/></Route>
                         <Route path={"/category/:category"}>
                             {params => <CategoryPage category={params.category}/>}
                         </Route>

@@ -11,6 +11,7 @@
     img{
         width: 80%;
         height: 70%;
+        object-fit:scale-down;
     }
     .price, .title{
         font-family: 'Raleway', sans-serif;
@@ -27,7 +28,8 @@
     position: relative;
     color: #8D8F9A;
     font-family: 'Raleway', sans-serif;
-    font-size: 2rem;
+    font-weight: 300;
+    font-size: 1.4rem;
     top: -30vh;
     z-index: 200;
     height: 10vh;

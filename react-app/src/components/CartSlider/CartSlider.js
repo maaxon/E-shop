@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import classes from './cartSlider.module.scss'
-import arrowRight from '../../arrowRight.png'
-import arrowLeft from '../../arrowLeft.png'
+import arrowRight from '../../images/arrowRight.png'
+import arrowLeft from '../../images/arrowLeft.png'
 
 export default class CartSlider extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state ={img:''}
     }
 
@@ -26,15 +26,17 @@ export default class CartSlider extends Component{
 
     render() {
         const sm = this.props.sm
+
         if (this.props.gallery.length >1){
             return(
                 <div className={classes.wrapper}>
-                    <img src={this.state.img} />
-                    <span onClick={this.prevSlide}><img src={arrowLeft}/></span>
-                    <span onClick={this.nextSlide}><img src={arrowRight}/></span>
+                    <img src={this.state.img} alt={"cartSlide"}/>
+                    <span onClick={this.prevSlide}><img src={arrowLeft} alt={"arrowLeft"}/></span>
+                    <span onClick={this.nextSlide}><img src={arrowRight} alt={"arrowRight"}/></span>
                 </div>
             )
         }
-        return <img className={`${classes.singleSlide} ${sm && classes.sm}`} src={this.props.gallery[0]}/>
+
+        return <img className={`${classes.singleSlide} ${sm && classes.sm}`} src={this.props.gallery[0]} alt={"cartSlide"}/>
     }
 }

@@ -6,8 +6,8 @@ import {ProductCard} from "../../components/ProductCard/ProductCard";
 
 export default class CategoryPage extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state={
             products:[]
         }
@@ -35,14 +35,14 @@ export default class CategoryPage extends Component{
 
     render() {
 
-        console.log(this.state.products)
 
 
         return(
             <>
                 <div className={classes.productsWrap}>
                     {this.state.products && this.state.products.map(({id,name,brand,gallery,prices,inStock})=>{
-                        return <ProductCard key={id} id={id} name={name} prices={prices} brand={brand} img={gallery[0]}  inStock={inStock} />
+                        return <ProductCard key={id} id={id} name={name} prices={prices}
+                                            brand={brand} img={gallery[0]}  inStock={inStock} />
                     })}
                 </div>
             </>

@@ -17,7 +17,7 @@ class Product{
             variables: {id}
         })
         this.product = await response.data.product
-
+        this.setOptions()
 
 
     }
@@ -25,6 +25,7 @@ class Product{
     setOptions(){
         this.selectedOptions = this.product.attributes.map(attribute=>{return {option:attribute.items[0].id,attribute:attribute.id} })
     }
+
     selectOption(attribute,newOption){
         this.selectedOptions = this.selectedOptions.map(option=>{
             if (option.attribute === attribute) return {attribute,option:newOption}

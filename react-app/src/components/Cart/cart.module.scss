@@ -16,12 +16,21 @@
       position: relative;
       overflow-y: auto;
       overflow-x: hidden;
-      padding: 0 2%;
+      padding: 0 4%;
+      z-index: 2000;
+      scrollbar-width:thin;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
     p,h1,h2{
       font-family: 'Raleway', sans-serif;
     }
-
+    .total{
+      display: flex;
+      justify-content: space-between;
+    }
     .cartBottom{
       display: flex;
       justify-content: space-evenly;

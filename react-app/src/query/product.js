@@ -3,10 +3,12 @@ import {gql} from "@apollo/client";
 export const GET_Product_By_ID=gql`
 query product($id:String!){
   product(id:$id){
+   id
    name
     brand
     gallery
     description
+    inStock
     prices{
       amount
       currency{
@@ -18,7 +20,7 @@ query product($id:String!){
       name
       type
       items{
-      
+        displayValue
         value
         id
       }

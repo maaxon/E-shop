@@ -1,10 +1,13 @@
 .wrapper{
   display: flex;
   justify-content: space-between;
-  padding: 5vh 0;
-  border-bottom: #E5E5E5 solid 1px ;
+  padding: 3vh 0;
+
   .rightSide{
     display: flex;
+    justify-content: space-evenly;
+    margin-left:5%;
+
     .counter{
       display: flex;
       justify-content: space-between;
@@ -12,6 +15,7 @@
       height: 85%;
       align-items: center;
       margin-right: 5%;
+
       span{
         border: 1px black solid;
         display: flex;
@@ -20,7 +24,13 @@
         width: 30px;
         height: 30px;
       }
+
     }
+
   }
 
+}
+
+.underline{
+  border-bottom: #E5E5E5 solid 1px ;
 }

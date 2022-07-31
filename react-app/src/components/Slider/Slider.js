@@ -3,8 +3,8 @@ import classes from "./slider.module.scss"
 
 class Slider extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state={
             selected:undefined
         }
@@ -20,18 +20,25 @@ class Slider extends Component{
             if (this.props.gallery){
 
                 if (this.props.gallery.length === 1){
-                    return <img className={classes.singleImg} src={this.props.gallery[0]}/>
+                    return (
+                        <div>
+                            <img className={classes.singleImg} src={this.props.gallery[0]} alt={"slide"}/>
+                            {!this.props.inStock && <p className={classes.outStock}>OUT OF STOCK</p>}
+                        </div>)
                 }
 
 
                 return (
                     <div className={classes.wrapper}>
                         <div className={classes.controlPanel}>
-                            {this.props.gallery.map(img=> <img className={this.state.selected === img ? classes.selected:''}
-                                                               onClick={()=>this.selectSlide(img)} src={img}/>)}
+                            {this.props.gallery.map(img=> <img key={Math.random().toString(16)}
+                                                               className={this.state.selected === img ? classes.selected:''}
+                                                               onClick={()=>this.selectSlide(img)} src={img} alt={"slide"}/>)}
                         </div>
+
                         <div className={classes.imgWrap}>
-                            <img src={this.state.selected ? this.state.selected: this.props.gallery[0]}/>
+                            <img src={this.state.selected ? this.state.selected: this.props.gallery[0]} alt={"slide"}/>
+                            {!this.props.inStock && <p className={classes.outStock}>OUT OF STOCK</p>}
                         </div>
 
                     </div>

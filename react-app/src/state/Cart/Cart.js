@@ -7,10 +7,10 @@ class Cart{
 
     overlayActive=false
 
-
     constructor() {
         makeAutoObservable(this)
     }
+
 
     addToCart(product,selectedOptions){
         const matched = this.items.find(item=>isEqual(item.selectedOptions,selectedOptions) && item.id===product.id)
@@ -29,12 +29,11 @@ class Cart{
     }
 
     decrementProductCount=(index)=>{
-        if (this.items[index].count -=1 === 0) {
-            this.items = this.items.filter((item,idx)=>idx !== index)
-            if (this.items.length === 0) this.switchOverlay()
-        }
-
         this.items[index].count -=1
+
+        if (this.items[index].count  === 0) {
+            this.items = this.items.filter((item,idx)=>idx !== index)
+        }
     }
 
     getTotal(){
@@ -54,6 +53,11 @@ class Cart{
         this.overlayActive = !this.overlayActive
         if (this.overlayActive){
             document.body.style.overflow ="hidden"
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
         }
         else document.body.style.overflow =""
     }

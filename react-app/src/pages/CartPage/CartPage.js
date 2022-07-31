@@ -15,13 +15,14 @@ class CartPage extends Component{
                 <h1 className={classes.title}>Cart</h1>
 
                 <div>
-                    {cartState.items && cartState.items.map((item,index)=><CartItem index={index} count={item.count} gallery={item.gallery} brand={item.brand} name={item.name} attributes={item.attributes}
+                    {cartState.items && cartState.items.map((item,index)=><CartItem key={item.id+index} underline  index={index} count={item.count} gallery={item.gallery} brand={item.brand} name={item.name} attributes={item.attributes}
                                                                             selectedOptions={item.selectedOptions} prices={item.prices} />)}
                 </div>
+
                 <div className={classes.order}>
-                    <p>Tax 21%: {Math.floor((cartState.getTotal()*0.21)*100)/100}</p>
+                    <p>Tax 21%: {currencyState.currency}{Math.floor((cartState.getTotal()*0.21)*100)/100}</p>
                     <p>Quantity: {cartState.getQuantity()}</p>
-                    <p>Total: {cartState.getTotal()}</p>
+                    <p>Total: {currencyState.currency}{Math.floor((cartState.getTotal())*100)/100}</p>
                     <span>ORDER</span>
                 </div>
             </div>

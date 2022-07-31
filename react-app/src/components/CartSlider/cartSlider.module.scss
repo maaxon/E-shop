@@ -6,6 +6,7 @@
   img{
     max-height: 100%;
     max-width: 10vw;
+    object-fit:scale-down;
   }
   span{
     position: relative;
@@ -22,6 +23,7 @@
 .singleSlide{
   max-height: 50%;
   max-width: 10vw;
+  object-fit:scale-down;
 }
 
 .sm{

@@ -5,6 +5,7 @@
   grid-column-gap: 5%;
   height: 50%;
 
+
   .controlPanel{
     overflow-y: auto;
     height: 80%;
@@ -17,16 +18,31 @@
       img{
         width: 70%;
         margin-bottom:10% ;
+        object-fit:scale-down;
       }
       .selected{
         opacity: 0.6;
       }
   }
   .imgWrap{
-        height: 80vh;
+    height: 80vh;
+
+     .outStock{
+      position: absolute;
+      color: #8D8F9A;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 2.7rem;
+      top: 40%;
+      z-index: 200;
+      height: 10vh;
+      left: 22%;
+    }
+
     img{
       width: 100%;
       max-height: 100%;
+      object-fit:scale-down;
     }
   }
 }
@@ -35,4 +51,16 @@
   width: 80%;
   max-height:80vh ;
   margin-left: 5%;
+}
+
+.outStock{
+  position: absolute;
+  color: #8D8F9A;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 2.7rem;
+  top: 40%;
+  z-index: 200;
+  height: 10vh;
+  left: 15%;
 }

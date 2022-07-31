@@ -5,9 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import AppRouter from "./AppRouter";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
+const defaultOptions = {
+    watchQuery: {
+        fetchPolicy: 'no-cache',
+        errorPolicy: 'ignore',
+    }
+}
+
 export const client = new ApolloClient({
     uri: 'http://localhost:4000/',
     cache: new InMemoryCache(),
+    defaultOptions: defaultOptions
 });
 
 

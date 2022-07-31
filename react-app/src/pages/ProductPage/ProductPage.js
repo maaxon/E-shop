@@ -13,7 +13,6 @@ class ProductPage extends Component {
 
     componentDidMount= async () => {
         await productState.getProduct(this.props.id)
-        productState.setOptions()
     }
 
 
@@ -22,18 +21,21 @@ class ProductPage extends Component {
 
         if (productState.product){
 
-            const {brand,name,gallery,prices,description,attributes} = productState.product
-
-
+            const {brand,name,gallery,prices,description,attributes,inStock} = productState.product
             return (
                 <div className={classes.wrapper}>
-                    <Slider gallery={gallery} />
+                    <Slider inStock={inStock} gallery={gallery} />
+
                     <div>
                         <h1>{brand}</h1>
                         <p>{name}</p>
 
-                        {attributes && attributes.map(attribute=><Option selectedOptions={productState.selectedOptions} key={attribute.id} id={attribute.id} name={attribute.name}
-                                                                         type={attribute.type} items={attribute.items} />)}
+                        {attributes && attributes.map(attribute=><Option selectedOptions={productState.selectedOptions}
+                                                                         key={attribute.id}
+                                                                         id={attribute.id}
+                                                                         name={attribute.name}
+                                                                         type={attribute.type}
+                                                                         items={attribute.items} />)}
 
                         <h2>Price:</h2>
                         <Pricer prices={prices}/>

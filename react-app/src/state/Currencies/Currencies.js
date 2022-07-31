@@ -11,15 +11,15 @@ class Currency{
         makeAutoObservable(this)
     }
 
-    async getCurrencies() {
+     async getCurrencies() {
         const response = await client.query({
             query: GET_Currencies,
         })
         this.currencies = await response.data.currencies
         this.currency = response.data.currencies[0].symbol
-
-
     }
+
+
     setCurrency=(symbol)=>{
         this.currency=symbol
     }

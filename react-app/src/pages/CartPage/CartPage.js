@@ -22,7 +22,7 @@ class CartPage extends Component{
                 <div className={classes.order}>
                     <p>Tax 21%: {currencyState.currency}{Math.floor((cartState.getTotal()*0.21)*100)/100}</p>
                     <p>Quantity: {cartState.getQuantity()}</p>
-                    <p>Total: {currencyState.currency}{Math.floor((cartState.getTotal())*100)/100}</p>
+                    <p>Total: {currencyState.currency}{cartState.getTotal()}</p>
                     <span>ORDER</span>
                 </div>
             </div>

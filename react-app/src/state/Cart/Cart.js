@@ -37,10 +37,11 @@ class Cart{
     }
 
     getTotal(){
-        return this.items.reduce((sum, item) => {
+        const total =this.items.reduce((sum, item) => {
             const price = item.prices.find(prices => prices.currency.symbol === currencyState.currency)
             return sum + price.amount * item.count
         }, 0)
+        return Math.floor((total*100))/100
     }
     getQuantity(){
         return this.items.reduce((sum,item)=>{
